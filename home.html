@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="description" content="homepage" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home</title>
+  </head>
+  <body>
+    <header>
+      <a href="home.html">
+        <img src="logo.png" alt="Вебсайтын лого" />
+      </a>
+
+      <nav>
+        <ul>
+          <li>
+            <a href="employees.html">Үйлчилгээ</a>
+          </li>
+          <li>
+            <a href="employees.html">Ажилтан</a>
+          </li>
+          <li>
+            <a href="accounts.html">Данс цэнэглэх</a>
+          </li>
+          <li>
+            <a href="register.html">Бүртгүүлэх</a>
+          </li>
+          <li>
+            <a href="login.html">Нэвтрэх</a>
+          </li>
+        </ul>
+      </nav>
+      <form action="/search" method="GET">
+        <label for="service_type">Үйлчилгээний төрөл:</label>
+        <select id="service_type" name="service_type">
+          <option value="">Сонгоно уу</option>
+          <option value="cleaning">Цэвэрлэгээ</option>
+          <option value="repair">Засвар</option>
+        </select>
+
+        <label for="location">Байршил:</label>
+        <select id="location" name="location">
+          <option value="">Сонгоно уу</option>
+          <option value="city">Хот</option>
+          <option value="district">Дүүрэг</option>
+        </select>
+
+        <label for="property_type">Төрөл:</label>
+        <select id="property_type" name="property_type">
+          <option value="">Сонгоно уу</option>
+          <option value="home">Гэр</option>
+          <option value="business">Бизнес</option>
+        </select>
+
+        <button type="submit">Хайх</button>
+      </form>
+    </header>
+    <main>
+      <section class="categories">
+        <h2>Үйлчилгээний төрөл</h2>
+        <ul>
+          <li>
+            <a href="employees.html">Цэвэрлэгээ <span>(192)</span></a>
+          </li>
+          <li>
+            <a href="employees.html">Засвар <span>(115)</span></a>
+          </li>
+          <li>
+            <a href="employees.html">Угсралт <span>(50)</span></a>
+          </li>
+          <!-- Бусад төрлүүдийг нэмнэ -->
+        </ul>
+      </section>
+
+      <section class="featured-services">
+        <h2>Онцлох үйлчилгээ</h2>
+        <div class="carousel">
+          <!-- Онцлох үйлчилгээнүүд -->
+          <div class="service">
+            <a href="employees.html"> Үйлчилгээ 1</a>
+          </div>
+          <div class="service">
+            <a href="employees.html"> Үйлчилгээ 2</a>
+          </div>
+          <div class="service">
+            <a href="employees.html"> Үйлчилгээ 3</a>
+          </div>
+          <div class="service">
+            <a href="employees.html"> Үйлчилгээ 4</a>
+          </div>
+          <!-- Бусад үйлчилгээнүүдийг нэмнэ -->
+        </div>
+      </section>
+
+      <section class="testimonials">
+        <h2>Санал сэтгэгдэл</h2>
+        <div class="testimonial">
+          <img src="profile.jpg" alt="Хэрэглэгчийн зураг" />
+          <p>Маш сайн үйлчилгээ</p>
+          <span>★★★★★</span>
+        </div>
+        <!-- Бусад санал сэтгэгдлүүдийг нэмнэ -->
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2024 Үйлчилгээний Зарын Вебсайт</p>
+      <nav>
+        <a href="about.html">Бидний тухай</a>
+        <a href="pricing.html">Үнийн санал</a>
+        <a href="service-options.html">Үйлчилгээний нөхцөл</a>
+        <a href="contact.html">Холбоо барих</a>
+      </nav>
+      <div class="social-media">
+        <a href="facebook.com">Facebook</a>
+        <a href="twitter.com">Twitter</a>
+        <a href="youtube.com">Youtube</a>
+        <a href="instagram.com">Instagram</a>
+      </div>
+    </footer>
+  </body>
+</html>
