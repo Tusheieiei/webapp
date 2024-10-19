@@ -4,90 +4,98 @@
     <meta name="description" content="employees" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="employees.css">
     <title>home</title>
   </head>
   <body>
     <header>
-      <a href="home.html">
-        <img src="logo.png" alt="Вебсайтын лого" />
-      </a>
+      <section class="navCont" name="Navigation">
+        <!-- logo -->
+        <a class="logo" href="home.html">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="40px"
+            height="40px"
+            viewBox="0 0 16 16"
+            fill="none"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M8 16L3.54223 12.3383C1.93278 11.0162 1 9.04287 1 6.96005C1 3.11612 4.15607 0 8 0C11.8439 0 15 3.11612 15 6.96005C15 9.04287 14.0672 11.0162 12.4578 12.3383L8 16ZM3 6H5C6.10457 6 7 6.89543 7 8V9L3 7.5V6ZM11 6C9.89543 6 9 6.89543 9 8V9L13 7.5V6H11Z"
+              fill="#3a4852"
+            />
+          </svg>
+        </a>
 
-      <nav>
-        <ul>
-          <li>
-            <a href="services.html">Үйлчилгээ</a>
-          </li>
-          <li>
-            <a href="employees.html">Ажилтан</a>
-          </li>
-          <li>
-            <a href="accounts.html">Данс цэнэглэх</a>
-          </li>
-          <li>
-            <a href="register.html">Бүртгүүлэх</a>
-          </li>
-          <li>
-            <a href="login.html">Нэвтрэх</a>
-          </li>
-        </ul>
-      </nav>
-      <form action="/search" method="GET">
-        <label for="service_type">Үйлчилгээний төрөл:</label>
-        <select id="service_type" name="service_type">
-          <option value="">Сонгоно уу</option>
-          <option value="cleaning">Цэвэрлэгээ</option>
-          <option value="repair">Засвар</option>
-        </select>
-
-        <label for="location">Байршил:</label>
-        <select id="location" name="location">
-          <option value="">Сонгоно уу</option>
-          <option value="city">Хот</option>
-          <option value="district">Дүүрэг</option>
-        </select>
-
-        <label for="property_type">Төрөл:</label>
-        <select id="property_type" name="property_type">
-          <option value="">Сонгоно уу</option>
-          <option value="home">Гэр</option>
-          <option value="business">Бизнес</option>
-        </select>
-
-        <button type="submit">Хайх</button>
-      </form>
+        <!-- navigation section -->
+        <nav class="navStyle">
+          <a href="employees.html">Үйлчилгээ</a>
+          <a href="employees.html">Ажилтан</a>
+          <a href="accounts.html">Данс цэнэглэх</a>
+        </nav>
+        <!-- login/signup section -->
+        <div class="loginSign">
+          <a class="loginButton" href="login.html"
+            >Нэвтрэх<svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20px"
+              height="20px"
+              viewBox="0 0 24 24"
+              fill="#fff"
+            >
+              <path
+                d="M12 14.5V16.5M7 10.0288C7.47142 10 8.05259 10 8.8 10H15.2C15.9474 10 16.5286 10 17 10.0288M7 10.0288C6.41168 10.0647 5.99429 10.1455 5.63803 10.327C5.07354 10.6146 4.6146 11.0735 4.32698 11.638C4 12.2798 4 13.1198 4 14.8V16.2C4 17.8802 4 18.7202 4.32698 19.362C4.6146 19.9265 5.07354 20.3854 5.63803 20.673C6.27976 21 7.11984 21 8.8 21H15.2C16.8802 21 17.7202 21 18.362 20.673C18.9265 20.3854 19.3854 19.9265 19.673 19.362C20 18.7202 20 17.8802 20 16.2V14.8C20 13.1198 20 12.2798 19.673 11.638C19.3854 11.0735 18.9265 10.6146 18.362 10.327C18.0057 10.1455 17.5883 10.0647 17 10.0288M7 10.0288V8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8V10.0288"
+                stroke="#3a4852"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+          <a class="signUpbutton" href="register.html">Бүртгүүлэх</a>
+          <!-- hamburger button for mobile -->
+          <button
+            class="hamburger"
+            aria-label="Toggle navigation"
+            onclick="openNav()"
+          >
+            &#9776;
+          </button>
+        </div>
+      </section>
     </header>
     <main>
-      <section name="container">
-        <h1>Ажилийн нэр</h1>
-        <div name="dateSearch">
-          <div name="Огноо">
+      <h1>Ажилийн нэр</h1>
+      <section class="container">
+        <div class="dateSearch">
+          <div class="Day">
             <p>Огноо</p>
-            <button>Өнөөдөр</button>
-            <button>3 хоногт</button>
-            <button>7 хоногт</button>
-            <button>Огноо сонгох</button>
+            <button >Өнөөдөр</button>
+            <button >3 хоногт</button>
+            <button >7 хоногт</button>
+            <button >Огноо сонгох</button>
           </div>
           <hr />
-          <form>
+          <form class="Times">
             <p>Цаг</p>
-            <label>
+            <label class="Time">
               <input type="checkbox" />
               Өглөө (8pm-12pm) </label
             ><br />
-            <label>
+            <label class="Time">
               <input type="checkbox" />
               Өдөр (12pm-5pm) </label
             ><br />
 
-            <label>
+            <label class="Time">
               <input type="checkbox" />
               Орой (5pm-9:30pm) </label
             ><br />
           </form>
           <hr />
-          <form>
-            <label for="price">Үнэ</label>
-            <span id="priceValue">20000</span>
+          <form class="Prices">
+            <label class="price">Үнэ</label>
             <input
               type="range"
               id="price"
@@ -96,27 +104,68 @@
               max="150000"
               value="20000"
             />
-            <span id="priceValue">150000</span>
+            <div id="priceValue">
+            <span >20000</span>
+            <span >150000</span>
+          </div>
           </form>
           <hr />
           <button>Харах</button>
         </div>
-        <div name="listOfWorkers">
-          <article class="service">
-            <img src="profile.jpg" alt="Үйлчилгээний ажилтан" />
-            <h3>Сарангэрэл X.</h3>
-            <p>Үйлчилгээний товч танилцуулга...</p>
-            <span>Үнэлгээ: ★★★★☆</span>
-            <p>Үнэ: 1цаг / 50,000₮</p>
-            <a href="workerProfile.html">
+        <div class="listOfWorkers">
+          <article class="services">
+            <div class="picture">
+              <img src="profile.jpg" alt="Үйлчилгээний ажилтан" />
+            </div>
+            <div class="profile">
+              <h3>Сарангэрэл X.</h3>
+              <span>Үнэлгээ: ★★★★☆</span>
+              <p>Үйлчилгээний товч танилцуулга...</p>
+            </div>
+            <div class="PriceToTime"> 
+              <p>Үнэ: 1цаг / 50,000₮</p>
+              <a href="workerProfile.html">
               <button>Сонгох</button>
-            </a>
+              </a>
+            </div>
+          </article>
+          <article class="services">
+            <div class="picture">
+              <img src="profile.jpg" alt="Үйлчилгээний ажилтан" />
+            </div>
+            <div class="profile">
+              <h3>Сарангэрэл X.</h3>
+              <span>Үнэлгээ: ★★★★☆</span>
+              <p>Үйлчилгээний товч танилцуулга...</p>
+            </div>
+            <div class="PriceToTime"> 
+              <p>Үнэ: 1цаг / 50,000₮</p>
+              <a href="workerProfile.html">
+              <button>Сонгох</button>
+              </a>
+            </div>
+          </article>
+          <article class="services">
+            <div class="picture">
+              <img src="profile.jpg" alt="Үйлчилгээний ажилтан" />
+            </div>
+            <div class="profile">
+              <h3>Сарангэрэл X.</h3>
+              <span>Үнэлгээ: ★★★★☆</span>
+              <p>Үйлчилгээний товч танилцуулга...</p>
+            </div>
+            <div class="PriceToTime"> 
+              <p>Үнэ: 1цаг / 50,000₮</p>
+              <a href="workerProfile.html">
+              <button>Сонгох</button>
+              </a>
+            </div>
           </article>
         </div>
       </section>
     </main>
     <footer>
-      <p>&copy; 2024 Үйлчилгээний Зарын Вебсайт</p>
+      <p>&copy; 2024 Үйлчилгээний Зарын Вебсайт </p>
       <nav>
         <a href="about.html">Бидний тухай</a>
         <a href="pricing.html">Үнийн санал</a>
