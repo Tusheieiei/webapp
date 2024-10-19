@@ -1,0 +1,244 @@
+:root {
+    --mainMargin : 8%;
+    --displayFlex : flex;
+    --contentspace : space-between;
+    --Datemargin : 8%;
+    --Datewidth :15%;
+    --backgroundcolor : #eee5ca;
+    --margin5 : 5%;
+    --columnflex :column;
+    --textcenter : center;
+    --buttonheight : 30%;
+    --margin2 : 2%;
+    --margin20 : 20%;
+    --margin10 : 10%;
+    --margin15 : 15%;
+    --margin30 : 30%;
+    --margin25 : 25%;
+    --margin40 : 40%;
+    --margin60 : 60%;
+    --contentcenter : center;
+    --headerPadding1: 0px 10% 0px 10%;
+    --headerPadding2: 0px 4% 0px 4%;
+    --headerHeight: 5rem;
+    --fontfamily: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --text-indent: 10px;
+    --marginNone: 0px;
+    --window-height: 100vh;
+    --padding-top: 20px;
+    --headerPadding1: 0px 10% 0px 10%;
+    --headerPadding2: 0px 4% 0px 4%;
+    --padding1: 0px 20px 20px 20px;
+    --gap1: 2rem;
+    --gap2: 15px;
+    --gap3: 20px;
+    --input-height: 3rem;
+    --headerHeight: 5rem;
+    --top-padding: 1rem;
+    --border-rad: 50px;
+    --border-rad1: 15px;
+    --inputspace: 6px;
+    --marginspace: 30px;
+    --backgroundcolor: #eee5ca;
+    --buttoncolor: #d0796b;
+    --fontcolor: #3a4852;
+    --fontsize1: 35px;
+    --fontsize2: 25px;
+    --fontsize3: 15px;
+    --imgheight: 240px;
+    --mobilewidth: 120px;
+    --mobilewidth1: 300px;
+}
+
+main{
+    margin-left: var(--mainMargin);
+    margin-left: var(--mainMargin);
+}
+.container {
+    display: var(--displayFlex);
+    justify-content: var(--contentspace);
+    margin-bottom: var(--margin2);
+}
+
+.dateSearch {
+    margin-left: var(--Datemargin);
+    width: var(--Datewidth);
+    background-color: var(--backgroundcolor);
+}
+
+main h1 {
+    margin-left: var(--mainMargin);
+    margin-top : var(--margin5);
+}
+
+.Day {
+    display: var(--displayFlex);
+    flex-direction: var(--columnflex);
+}
+
+main section div div button {
+    text-align: var(--textcenter);
+    height: var(--buttonheight);
+    margin-top: var(--margin5);
+    margin-left: var(--margin20);
+    margin-right: var(--margin20);
+    margin-bottom: var(--margin5);
+}
+main section div div p {
+    margin-left: var(--margin20);
+}
+.Times {
+    display: var(--displayFlex);
+    flex-direction: var(--columnflex);
+    margin-left: var(--margin20);
+}
+
+.Time {
+    margin-top: var(--margin5);
+}
+
+.Prices {
+    display: var(--displayFlex);
+    flex-direction: var(--columnflex);
+    margin-top: var(--margin10);
+    margin-left: var(--margin20);
+    margin-right: var(--margin20);
+    margin-bottom: var(--margin10);
+}
+
+.price {
+    margin-bottom: var(--margin5);
+}
+
+#priceValue {
+    display: var(--displayFlex);
+    justify-content: var(--contentspace);
+}
+
+main section div button {
+    margin-top: var(--margin10);
+    margin-left: var(--margin20);
+    margin-right: var(--margin20);
+    text-align: var(--textcenter);
+    width: var(--margin60);
+    margin-bottom: var(--margin10);
+}
+
+.listOfWorkers {
+    width: var(--margin60);
+    margin-right: var(--margin15);
+}
+.services {
+    background-color: var(--backgroundcolor);
+    margin-bottom: var(--margin2);
+    display: var(--displayFlex);
+    height: var(--margin30);
+}
+.picture {
+    display: var(--displayFlex);
+    width: var(--margin40);
+}
+
+.profile {
+    display: var(--displayFlex);
+    flex-direction: var(--columnflex);
+    justify-content: var(--contentcenter);
+    width: var(--margin30);
+    margin-right: var(--margin10);
+}
+.PriceToTime {
+    display: var(--displayFlex);
+    width: var(--margin30);
+    flex-direction: var(--columnflex);
+    margin-right: var(--margin10);
+    height: var(--margin10);
+    margin-top: var(--margin2);
+}
+
+main section div article div a button {
+    width: var(--margin30);
+    margin-left: var(--margin25);
+    margin-top: var(--margin10);
+}
+header {
+    background-color: var(--backgroundcolor);
+    display: flex;
+    height: var(--headerHeight);
+    padding: var(--headerPadding1);
+    width: 100%;
+  }
+footer {
+    position: relative;
+    bottom: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: var(--backgroundcolor);
+    height: 100px;
+  }
+@media (max-width: 768px) {
+    header {
+      padding: var(--headerPadding2);
+    }
+    .navStyle {
+      position: fixed;
+      top: var(--headerHeight);
+      right: -250px; /* Start off-screen  */
+      height: 100%;
+      width: 100%; /* Set width for the menu */
+      opacity: 0; /* Hidden by default */
+      flex-direction: column;
+      z-index: 1;
+      background-color: var(--backgroundcolor);
+      transition: right 0.5s ease, opacity 0.5s ease; /* Animate position and opacity */
+      padding: 1rem 0;
+    }
+    .navStyle a {
+        padding: 10px 0;
+        text-align: center;
+      }
+    
+      /* Show navigation when active */
+      .nav-active {
+        right: 0; /* Bring the menu into view */
+        opacity: 1; /* Show the menu */
+      }
+    
+      .hamburger {
+        display: block; /* Show hamburger button on mobile */
+      }
+}
+.loginSign {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    gap: var(--gap2);
+  }
+  .loginButton {
+    display: flex;
+    align-items: center;
+  }
+  .navCont {
+    width: 80%;
+    display: flex;
+  }
+  .navStyle {
+    margin-left: var(--marginspace);
+    gap: var(--gap3);
+    display: flex;
+    align-items: center;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+a{  font-weight: 600;
+  text-decoration: none;
+  color: var(--fontcolor);
+  font-family: var(--fontfamily);
+}
+.hamburger {
+    display: block; /* Show hamburger button on mobile */
+  }
