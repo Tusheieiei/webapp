@@ -39,7 +39,7 @@ input::placeholder {
 }
 
 h2 {
-    width: 100%;
+  width: 100%;
   font-size: var(--fontsize1);
   font-family: var(--fontfamily);
   color: var(--fontcolor);
@@ -110,71 +110,73 @@ header {
 /* main */
 
 .mainCont {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    min-height: calc(100vh - var(--headerHeight) - 100px); /* Ensure it takes the full height minus header and footer */
-  }
-  
-  .formCont {
-    width: 50%;
-    max-width: 400px; /* Limit the width on larger screens */
-    background-color: var(--backgroundcolor);
-    padding: var(--padding1);
-    border-radius: var(--border-rad1);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: var(--gap3);
-  }
-  
-  input {
-    width: 100%;
-    height: var(--input-height);
-    border-radius: var(--border-rad);
-    border: none;
-    padding-left: 15px;
-    font-size: var(--fontsize3);
-    color: var(--fontcolor);
-  }
-  
-  input::placeholder {
-    color: #888;
-  }
-  
-  button.btn {
-    width: 100%;
-    height: var(--input-height);
-    background-color: var(--buttoncolor);
-    color: white;
-    border: none;
-    border-radius: var(--border-rad);
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s;
-  }
-  
-  button.btn:hover {
-    background-color: #c0675b;
-  }
-  
-  .forgot {
-    align-self: flex-end;
-    color: var(--fontcolor);
-    text-decoration: none;
-    font-size: var(--fontsize3);
-  }
-  
-  .forgot:hover {
-    text-decoration: underline;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: calc(
+    100vh - var(--headerHeight) - 100px
+  ); /* Ensure it takes the full height minus header and footer */
+}
+
+.formCont {
+  width: 50%;
+  max-width: 400px; /* Limit the width on larger screens */
+  background-color: var(--backgroundcolor);
+  padding: var(--padding1);
+  border-radius: var(--border-rad1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap3);
+}
+
+input {
+  width: 100%;
+  height: var(--input-height);
+  border-radius: var(--border-rad);
+  border: none;
+  padding-left: 15px;
+  font-size: var(--fontsize3);
+  color: var(--fontcolor);
+}
+
+input::placeholder {
+  color: #888;
+}
+
+button.btn {
+  width: 100%;
+  height: var(--input-height);
+  background-color: var(--buttoncolor);
+  color: white;
+  border: none;
+  border-radius: var(--border-rad);
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+button.btn:hover {
+  background-color: #c0675b;
+}
+
+.forgot {
+  align-self: flex-end;
+  color: var(--fontcolor);
+  text-decoration: none;
+  font-size: var(--fontsize3);
+}
+
+.forgot:hover {
+  text-decoration: underline;
+}
+
 footer {
   position: relative;
   bottom: 0px;
@@ -192,30 +194,28 @@ footer {
   .navStyle {
     position: fixed;
     top: var(--headerHeight);
-    right: -250px; /* Start off-screen */
+    right: -250px; 
     height: 100%;
-    width: 250px; /* Set width for the menu */
-    opacity: 0; /* Hidden by default */
+    width: 250px;
+    opacity: 0; 
     flex-direction: column;
     z-index: 1;
     background-color: var(--backgroundcolor);
-    transition: right 0.5s ease, opacity 0.5s ease; /* Animate position and opacity */
+    transition: right 0.5s ease, opacity 0.5s ease; 
     padding: 1rem 0;
   }
 
-  /* Links inside the nav */
   .navStyle a {
     padding: 10px 0;
     text-align: center;
   }
 
-  /* Show navigation when active */
   .nav-active {
-    right: 0; /* Bring the menu into view */
-    opacity: 1; /* Show the menu */
+    right: 0; 
+    opacity: 1; 
   }
 
   .hamburger {
-    display: block; /* Show hamburger button on mobile */
+    display: block;
   }
 }

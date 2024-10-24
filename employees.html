@@ -4,7 +4,7 @@
     <meta name="description" content="employees" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="employees.css">
+    <link rel="stylesheet" href="employees.css" />
     <title>home</title>
   </head>
   <body>
@@ -71,10 +71,10 @@
         <div class="dateSearch">
           <div class="Day">
             <p>Огноо</p>
-            <button >Өнөөдөр</button>
-            <button >3 хоногт</button>
-            <button >7 хоногт</button>
-            <button >Огноо сонгох</button>
+            <button>Өнөөдөр</button>
+            <button>3 хоногт</button>
+            <button>7 хоногт</button>
+            <button>Огноо сонгох</button>
           </div>
           <hr />
           <form class="Times">
@@ -105,9 +105,9 @@
               value="20000"
             />
             <div id="priceValue">
-            <span >20000</span>
-            <span >150000</span>
-          </div>
+              <span>20000</span>
+              <span>150000</span>
+            </div>
           </form>
           <hr />
           <button>Харах</button>
@@ -122,10 +122,10 @@
               <span>Үнэлгээ: ★★★★☆</span>
               <p>Үйлчилгээний товч танилцуулга...</p>
             </div>
-            <div class="PriceToTime"> 
+            <div class="PriceToTime">
               <p>Үнэ: 1цаг / 50,000₮</p>
               <a href="workerProfile.html">
-              <button>Сонгох</button>
+                <button>Сонгох</button>
               </a>
             </div>
           </article>
@@ -138,10 +138,10 @@
               <span>Үнэлгээ: ★★★★☆</span>
               <p>Үйлчилгээний товч танилцуулга...</p>
             </div>
-            <div class="PriceToTime"> 
+            <div class="PriceToTime">
               <p>Үнэ: 1цаг / 50,000₮</p>
               <a href="workerProfile.html">
-              <button>Сонгох</button>
+                <button>Сонгох</button>
               </a>
             </div>
           </article>
@@ -154,10 +154,10 @@
               <span>Үнэлгээ: ★★★★☆</span>
               <p>Үйлчилгээний товч танилцуулга...</p>
             </div>
-            <div class="PriceToTime"> 
+            <div class="PriceToTime">
               <p>Үнэ: 1цаг / 50,000₮</p>
               <a href="workerProfile.html">
-              <button>Сонгох</button>
+                <button>Сонгох</button>
               </a>
             </div>
           </article>
@@ -165,7 +165,7 @@
       </section>
     </main>
     <footer>
-      <p>&copy; 2024 Үйлчилгээний Зарын Вебсайт </p>
+      <p>&copy; 2024 Үйлчилгээний Зарын Вебсайт</p>
       <nav>
         <a href="about.html">Бидний тухай</a>
         <a href="pricing.html">Үнийн санал</a>
@@ -179,5 +179,14 @@
         <a href="instagram.com">Instagram</a>
       </div>
     </footer>
+    <script>
+      // Toggle the navigation menu
+      document
+        .querySelector(".hamburger")
+        .addEventListener("click", function () {
+          const nav = document.querySelector(".navStyle");
+          nav.classList.toggle("nav-active");
+        });
+    </script>
   </body>
 </html>
