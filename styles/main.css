@@ -20,11 +20,12 @@
     --border-rad1: 15px;
     --inputspace: 6px;
     --marginspace: 30px;
+    --marginBot: 15px;
     --backgroundcolor: #eee5ca;
     --buttoncolor: #d0796b;
     --fontcolor: #3a4852;
     --fontsize1: 35px;
-    --fontsize2: 25px;
+    --fontsize2: 15px;
     --fontsize3:15px;
     --imgheight: 240px;
     --mobilewidth: 120px;
@@ -241,6 +242,7 @@
     font-size: var(--fontsize1);
     font-family: var(--fontfamily);
     color: var(--fontcolor);
+    margin-bottom: var(--marginBot);
   }
   footer {
     display: flex;

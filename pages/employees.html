@@ -4,7 +4,7 @@
     <meta name="description" content="employees" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="employees.css" />
+    <link rel="stylesheet" href="/styles/employees.css" />
     <title>home</title>
   </head>
   <body>
@@ -66,7 +66,7 @@
       </section>
     </header>
     <main>
-      <h1>Ажилийн нэр</h1>
+      <h1 id="jobTitle">Ажилийн нэр</h1>
       <section class="container">
         <div class="dateSearch">
           <div class="Day">
@@ -100,67 +100,20 @@
               type="range"
               id="price"
               name="price"
-              min="20000"
+              min="100000"
               max="150000"
               value="20000"
+              step="1000"
             />
             <div id="priceValue">
-              <span>20000</span>
-              <span>150000</span>
+              <span id="currentPrice">20000</span>
             </div>
           </form>
           <hr />
           <button>Харах</button>
         </div>
-        <div class="listOfWorkers">
-          <article class="services">
-            <div class="picture">
-              <img src="profile.jpg" alt="Үйлчилгээний ажилтан" />
-            </div>
-            <div class="profile">
-              <h3>Сарангэрэл X.</h3>
-              <span>Үнэлгээ: ★★★★☆</span>
-              <p>Үйлчилгээний товч танилцуулга...</p>
-            </div>
-            <div class="PriceToTime">
-              <p>Үнэ: 1цаг / 50,000₮</p>
-              <a href="workerProfile.html">
-                <button>Сонгох</button>
-              </a>
-            </div>
-          </article>
-          <article class="services">
-            <div class="picture">
-              <img src="profile.jpg" alt="Үйлчилгээний ажилтан" />
-            </div>
-            <div class="profile">
-              <h3>Сарангэрэл X.</h3>
-              <span>Үнэлгээ: ★★★★☆</span>
-              <p>Үйлчилгээний товч танилцуулга...</p>
-            </div>
-            <div class="PriceToTime">
-              <p>Үнэ: 1цаг / 50,000₮</p>
-              <a href="workerProfile.html">
-                <button>Сонгох</button>
-              </a>
-            </div>
-          </article>
-          <article class="services">
-            <div class="picture">
-              <img src="profile.jpg" alt="Үйлчилгээний ажилтан" />
-            </div>
-            <div class="profile">
-              <h3>Сарангэрэл X.</h3>
-              <span>Үнэлгээ: ★★★★☆</span>
-              <p>Үйлчилгээний товч танилцуулга...</p>
-            </div>
-            <div class="PriceToTime">
-              <p>Үнэ: 1цаг / 50,000₮</p>
-              <a href="workerProfile.html">
-                <button>Сонгох</button>
-              </a>
-            </div>
-          </article>
+        <div class="listOfWorkers" id="listOfWorkers">
+          <!-- list хийгдэх card ууд -->
         </div>
       </section>
     </main>
@@ -188,5 +141,6 @@
           nav.classList.toggle("nav-active");
         });
     </script>
+    <script src="/employee.js"></script>
   </body>
 </html>

@@ -6,14 +6,11 @@ body {
   margin: var(--marginNone);
 }
 :root {
-  --mainMargin: 8%;
   --displayFlex: flex;
   --contentspace: space-between;
-  --Datemargin: 8%;
-  --Datewidth: 15%;
+  --Datewidth: 30%;
   --backgroundcolor: #eee5ca;
   --margin5: 5%;
-  --columnflex: column;
   --textcenter: center;
   --buttonheight: 30%;
   --margin2: 2%;
@@ -57,10 +54,11 @@ body {
   --mobilewidth1: 300px;
 }
 
-main {
-  margin-left: var(--mainMargin);
-  margin-left: var(--mainMargin);
+img {
+  width: 200px;
+  height: 100%;
 }
+
 .container {
   display: var(--displayFlex);
   justify-content: var(--contentspace);
@@ -68,22 +66,28 @@ main {
 }
 
 .dateSearch {
-  margin-left: var(--Datemargin);
+  height: 825px;
   width: var(--Datewidth);
   background-color: var(--backgroundcolor);
 }
 
-main h1 {
-  margin-left: var(--mainMargin);
-  margin-top: var(--margin5);
+h1 {
+  font-size: var(--fontsize1);
+  font-family: var(--fontfamily);
+  color: var(--fontcolor);
+  margin-bottom: var(--marginBot);
 }
 
+main {
+  width: 100%;
+  padding: var(--headerPadding1);
+}
 .Day {
   display: var(--displayFlex);
   flex-direction: var(--columnflex);
 }
 
-main section div div button {
+section div div button {
   text-align: var(--textcenter);
   height: var(--buttonheight);
   margin-top: var(--margin5);
@@ -91,7 +95,7 @@ main section div div button {
   margin-right: var(--margin20);
   margin-bottom: var(--margin5);
 }
-main section div div p {
+section div div p {
   margin-left: var(--margin20);
 }
 .Times {
@@ -122,7 +126,7 @@ main section div div p {
   justify-content: var(--contentspace);
 }
 
-main section div button {
+section div button {
   margin-top: var(--margin10);
   margin-left: var(--margin20);
   margin-right: var(--margin20);
@@ -133,13 +137,12 @@ main section div button {
 
 .listOfWorkers {
   width: var(--margin60);
-  margin-right: var(--margin15);
 }
 .services {
   background-color: var(--backgroundcolor);
   margin-bottom: var(--margin2);
   display: var(--displayFlex);
-  height: var(--margin30);
+  height: 250px;
 }
 .picture {
   display: var(--displayFlex);
@@ -162,7 +165,7 @@ main section div button {
   margin-top: var(--margin2);
 }
 
-main section div article div a button {
+section div article div a button {
   width: var(--margin30);
   margin-left: var(--margin25);
   margin-top: var(--margin10);
