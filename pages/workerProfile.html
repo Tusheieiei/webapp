@@ -1,74 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta name="description" content="employees" />
+    <meta name="description" content="workerProfile" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>home</title>
+    <link rel="stylesheet" href="/styles/workerporfile.css" />
+    <title>Worker Profile</title>
   </head>
   <body>
     <header>
-      <a href="home.html">
-        <img src="logo.png" alt="Вебсайтын лого" />
-      </a>
+      <section class="navCont" name="Navigation">
+        <!-- logo -->
+        <a class="logo" href="home.html">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="40px"
+            height="40px"
+            viewBox="0 0 16 16"
+            fill="#3a4852"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M8 16L3.54223 12.3383C1.93278 11.0162 1 9.04287 1 6.96005C1 3.11612 4.15607 0 8 0C11.8439 0 15 3.11612 15 6.96005C15 9.04287 14.0672 11.0162 12.4578 12.3383L8 16ZM3 6H5C6.10457 6 7 6.89543 7 8V9L3 7.5V6ZM11 6C9.89543 6 9 6.89543 9 8V9L13 7.5V6H11Z"
+              fill="#3a4852"
+            />
+          </svg>
+        </a>
 
-      <nav>
-        <ul>
-          <li>
-            <a href="services.html">Үйлчилгээ</a>
-          </li>
-          <li>
-            <a href="employees.html">Ажилтан</a>
-          </li>
-          <li>
-            <a href="accounts.html">Данс цэнэглэх</a>
-          </li>
-          <li>
-            <a href="register.html">Бүртгүүлэх</a>
-          </li>
-          <li>
-            <a href="login.html">Нэвтрэх</a>
-          </li>
-        </ul>
-      </nav>
-      <form action="/search" method="GET">
-        <label for="service_type">Үйлчилгээний төрөл:</label>
-        <select id="service_type" name="service_type">
-          <option value="">Сонгоно уу</option>
-          <option value="cleaning">Цэвэрлэгээ</option>
-          <option value="repair">Засвар</option>
-        </select>
-
-        <label for="location">Байршил:</label>
-        <select id="location" name="location">
-          <option value="">Сонгоно уу</option>
-          <option value="city">Хот</option>
-          <option value="district">Дүүрэг</option>
-        </select>
-
-        <label for="property_type">Төрөл:</label>
-        <select id="property_type" name="property_type">
-          <option value="">Сонгоно уу</option>
-          <option value="home">Гэр</option>
-          <option value="business">Бизнес</option>
-        </select>
-
-        <button type="submit">Хайх</button>
-      </form>
+        <!-- navigation section -->
+        <nav class="navStyle">
+          <a href="employees.html">Үйлчилгээ</a>
+          <a href="employees.html">Ажилтан</a>
+          <a href="accounts.html">Данс цэнэглэх</a>
+        </nav>
+        <!-- login/signup section -->
+        <div class="loginSign">
+          <a class="loginButton" href="login.html"
+            >Нэвтрэх<svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20px"
+              height="20px"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M12 14.5V16.5M7 10.0288C7.47142 10 8.05259 10 8.8 10H15.2C15.9474 10 16.5286 10 17 10.0288M7 10.0288C6.41168 10.0647 5.99429 10.1455 5.63803 10.327C5.07354 10.6146 4.6146 11.0735 4.32698 11.638C4 12.2798 4 13.1198 4 14.8V16.2C4 17.8802 4 18.7202 4.32698 19.362C4.6146 19.9265 5.07354 20.3854 5.63803 20.673C6.27976 21 7.11984 21 8.8 21H15.2C16.8802 21 17.7202 21 18.362 20.673C18.9265 20.3854 19.3854 19.9265 19.673 19.362C20 18.7202 20 17.8802 20 16.2V14.8C20 13.1198 20 12.2798 19.673 11.638C19.3854 11.0735 18.9265 10.6146 18.362 10.327C18.0057 10.1455 17.5883 10.0647 17 10.0288M7 10.0288V8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8V10.0288"
+                stroke="#3A4852"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+          <a class="signUpbutton" href="register.html">Бүртгүүлэх</a>
+          <!-- hamburger button for mobile -->
+          <button
+            class="hamburger"
+            aria-label="Toggle navigation"
+            onclick="openNav()">
+            &#9776;
+          </button>
+        </div>
+      </section>
     </header>
-    <main>
+    <section class="searchCont" name="searchBar">
+      <div class="inputCont">
+        <input class="inputStyle" placeholder="Үйлчилгээ" />
+        <input class="inputStyle" placeholder="↓ Байршил" />
+        <input class="inputStyle" placeholder="↓ Бүгд" />
+        <button class="searchBut">Хайх</button>
+      </div>
+    </section>
+    <main class="main">
       <section name="workerProfile">
         <article>
-          <figure>
-            <img src="profile photo" alt="Profile Picture" />
-          </figure>
-          <h1>John Doe</h1>
-          <p>Үнэ: 1цаг / 50,000₮</p>
-          <form>
-            <label for="star5">★★★★★</label>
-            <input type="radio" id="star5" name="rating" value="5" /><br />
-          </form>
-          <h1>Миний тухай</h1>
+          <div class="profiles">
+          <div>
+            <img src="https://picsum.photos/300/200" alt="=picture" />
+          </div>
+          <div class="profile">
+            <h3>Сарангэрэл X.</h3>
+            <span>Үнэлгээ: ★★★★☆</span>
+
+          </div>
+          <div class="PriceToTime"> 
+            <p>Үнэ: 1цаг / 50,000₮</p>
+          </div>
+        </div>
+          <h2>Миний тухай</h2>
           <p>
             Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
             sint. Exercitation veniam consequat amet. Amet minim mollit non
@@ -84,11 +104,24 @@
             veniam consequat amet. Amet minim mollit non deserunt ullamco est
             sit aliqua dolor do amet sint. Exercitation veniam consequat amet.
           </p>
-          <h3>Ажлын зураг</h3>
-          <section name="imgsCont">
-            <img src="photo" alt="work image" />
+          <h2>Ажлын зураг</h2>
+          <section class="work-section">
+            <!-- Ajliin zurag -->
+            <div class="workImg">
+                <img src="https://picsum.photos/200/300" alt="workImg1"/>
+            </div>
+            <div class="workImg">
+              <img src="https://picsum.photos/200/300" alt="workImg2"/>
+            </div>
+            <div class="workImg">
+              <img src="https://picsum.photos/200/300" alt="workImg3"/>
+            </div>
+            <div class="workImg">
+              <img src="https://picsum.photos/200/300" alt="workImg4"/>
+            </div>
           </section>
-          <h4>
+          <h2>Санал сэтгэгдэл</h2>
+          <p>Гарьдаа</p>
             <label for="star5">★★★★★</label>
             <p>
               Amet minim mollit non deserunt ullamco est sit aliqua dolor do
@@ -96,11 +129,12 @@
               Exercitation veniam consequat sunt nostrud amet. Exercitation
               veniam consequat sunt nostrud amet.
             </p>
-          </h4>
         </article>
       </section>
+
+    <article>
       <section name="confirmation">
-        <h5>Та өдөр болон цагаа сонгоно уу.</h5>
+        <h2>Та өдөр болон цагаа сонгоно уу.</h2>
         <form>
           <label for="calendar">Өдөр</label>
           <input type="date" id="calendar" name="calendar" />
@@ -116,6 +150,7 @@
         </form>
         <button>Баталгаажуулах</button>
       </section>
+    </article>
     </main>
     <footer>
       <p>&copy; 2024 Үйлчилгээний Зарын Вебсайт</p>
