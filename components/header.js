@@ -54,12 +54,11 @@ class Header extends HTMLElement {
         const themeToggleButton = shadow.querySelector('.theme-toggle');
         themeToggleButton.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
-            // Save theme preference in localStorage
+          
             const isDarkMode = document.body.classList.contains('dark-mode');
             localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
         });
 
-        // Load saved theme preference
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'dark') {
             document.body.classList.add('dark-mode');
