@@ -1,7 +1,11 @@
 * {
     box-sizing: border-box;
   }
-  
+  /* Dark mode styles */
+body.dark-mode {
+  --backgroundcolor: #333; /* Dark background */
+  --fontcolor: #f1f1f1; /* Light text color */
+}
   :root {
     --fontfamily: "Helvetica Neue", Helvetica, Arial, sans-serif;
     --text-indent: 10px;

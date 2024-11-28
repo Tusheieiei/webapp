@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Forecast</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+      }
+
+      .forecast {
+        width: 422px;
+        background-color: black;
+        padding: 15px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+      }
+
+      .forecast,
+      .city,
+      .temp,
+      .date,
+      .time {
+        font-size: 26px;
+        color: white;
+        margin-bottom: 7px;
+        font-weight: bold;
+      }
+
+      .googleLogin {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 20px;
+      }
+
+      .user-info {
+        color: black;
+        margin-top: 10px;
+        font-size: 18px;
+      }
+
+      #profilePic {
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        margin-top: 10px;
+      }
+
+      #signOutBtn {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #d9534f;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="weather">
+      <div class="forecast">
+        <form onsubmit="Value(event)">
+          <label for="gsearch">Search City:</label>
+          <input type="search" id="gsearch" />
+          <input type="submit" value="Submit" />
+        </form>
+
+        <div class="temp"><h2 id="City">City</h2></div>
+        <div class="temp"><h2 id="Temp">Temperature</h2></div>
+      </div>
+    </div>
+
+    <div class="googleLogin">
+      <h1>Sign in with Google</h1>
+      <div id="buttonDiv"></div>
+      <div id="userInfo" class="user-info" style="display: none">
+        <p id="userName"></p>
+        <p id="userEmail"></p>
+        <img id="profilePic" src="" alt="Profile Picture" />
+      </div>
+    </div>
+
+    <script>
+      const Value = (event) => {
+        event.preventDefault(); 
+        let input = document.getElementById("gsearch").value;
+        console.log(input);
+
+        const endpoint1 = `https://api.api-ninjas.com/v1/geocoding?city=${input}&country=`;
+
+        let long;
+        let alt;
+        fetch(endpoint1, {
+          headers: {
+            "X-Api-Key": "2ak1VNdndPibGcTIE5Iong==bHBZPWyEUZbrosF1",
+          },
+        })
+          .then((response) => response.json())
+          .then((data1) => {
+            console.log(data1);
+            long = data1[0].longitude;
+            alt = data1[0].latitude;
+            console.log(long);
+            console.log(alt);
+            const endpoint2 = `https://api.openweathermap.org/data/2.5/weather?lat=${alt}&lon=${long}&appid=9d577fccf4d833bd402bb4764e079461`;
+
+            return fetch(endpoint2);
+          })
+          .then((response) => response.json())
+          .then((data2) => {
+            console.log(data2);
+            var temp = data2.main.temp - 273;
+            document.getElementById("City").innerHTML = data2.name;
+            document.getElementById("Temp").innerHTML = `${Math.trunc(temp)}°C`;
+          })
+          .catch((error) => console.error(error));
+      };
+
+      function handleCredentialResponse(response) {
+        const user = jwt_decode(response.credential); 
+        console.log(user); 
+        document.getElementById("userName").textContent = `Name: ${user.name}`;
+        document.getElementById(
+          "userEmail"
+        ).textContent = `Email: ${user.email}`;
+        document.getElementById("profilePic").src = user.picture;
+        document.getElementById("userInfo").style.display = "block";
+        document.getElementById("signOutBtn").style.display = "block";
+        document.getElementById("buttonDiv").style.display = "none";
+      }
+
+      window.onload = function () {
+        gapi.load("auth2", function () {
+   
+          gapi.auth2.init({
+            client_id:
+              "573811764691-spvb29d14h0lpa4sd7g5a6rqpscedfgg.apps.googleusercontent.com",
+          });
+
+
+          google.accounts.id.initialize({
+            client_id:
+              "573811764691-spvb29d14h0lpa4sd7g5a6rqpscedfgg.apps.googleusercontent.com",
+            callback: handleCredentialResponse,
+          });
+          google.accounts.id.renderButton(document.getElementById("buttonDiv"), {
+            theme: "outline",
+            size: "large",
+          });
+          google.accounts.id.prompt();
+        });
+      };
+
+    </script>
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+  </body>
+</html>

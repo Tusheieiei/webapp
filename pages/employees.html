@@ -8,89 +8,33 @@
     <title>home</title>
   </head>
   <body>
-    <header>
-      <section class="navCont" name="Navigation">
-        <!-- logo -->
-        <a class="logo" href="home.html">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="40px"
-            height="40px"
-            viewBox="0 0 16 16"
-            fill="none"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M8 16L3.54223 12.3383C1.93278 11.0162 1 9.04287 1 6.96005C1 3.11612 4.15607 0 8 0C11.8439 0 15 3.11612 15 6.96005C15 9.04287 14.0672 11.0162 12.4578 12.3383L8 16ZM3 6H5C6.10457 6 7 6.89543 7 8V9L3 7.5V6ZM11 6C9.89543 6 9 6.89543 9 8V9L13 7.5V6H11Z"
-              fill="#3a4852"
-            />
-          </svg>
-        </a>
-
-        <!-- navigation section -->
-        <nav class="navStyle">
-          <a href="employees.html">Үйлчилгээ</a>
-          <a href="employees.html">Ажилтан</a>
-          <a href="accounts.html">Данс цэнэглэх</a>
-        </nav>
-        <!-- login/signup section -->
-        <div class="loginSign">
-          <a class="loginButton" href="login.html"
-            >Нэвтрэх<svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20px"
-              height="20px"
-              viewBox="0 0 24 24"
-              fill="#fff"
-            >
-              <path
-                d="M12 14.5V16.5M7 10.0288C7.47142 10 8.05259 10 8.8 10H15.2C15.9474 10 16.5286 10 17 10.0288M7 10.0288C6.41168 10.0647 5.99429 10.1455 5.63803 10.327C5.07354 10.6146 4.6146 11.0735 4.32698 11.638C4 12.2798 4 13.1198 4 14.8V16.2C4 17.8802 4 18.7202 4.32698 19.362C4.6146 19.9265 5.07354 20.3854 5.63803 20.673C6.27976 21 7.11984 21 8.8 21H15.2C16.8802 21 17.7202 21 18.362 20.673C18.9265 20.3854 19.3854 19.9265 19.673 19.362C20 18.7202 20 17.8802 20 16.2V14.8C20 13.1198 20 12.2798 19.673 11.638C19.3854 11.0735 18.9265 10.6146 18.362 10.327C18.0057 10.1455 17.5883 10.0647 17 10.0288M7 10.0288V8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8V10.0288"
-                stroke="#3a4852"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </a>
-          <a class="signUpbutton" href="register.html">Бүртгүүлэх</a>
-          <!-- hamburger button for mobile -->
-          <button
-            class="hamburger"
-            aria-label="Toggle navigation"
-            onclick="openNav()"
-          >
-            &#9776;
-          </button>
-        </div>
-      </section>
-    </header>
+    <header-component></header-component>
     <main>
-      <h1 id="jobTitle">Ажилийн нэр</h1>
       <section class="container">
         <div class="dateSearch">
+          <h1 id="jobTitle">Ажилийн нэр</h1>
           <div class="Day">
-            <p>Огноо</p>
-            <button>Өнөөдөр</button>
-            <button>3 хоногт</button>
-            <button>7 хоногт</button>
-            <button>Огноо сонгох</button>
+            <p class="date">Огноо</p>
+            <button class="dateFilter">Өнөөдөр</button>
+            <button class="dateFilter">3 хоногт</button>
+            <button class="dateFilter">7 хоногт</button>
+            <button class="dateFilter">Огноо сонгох</button>
           </div>
           <hr />
           <form class="Times">
             <p>Цаг</p>
             <label class="Time">
               <input type="checkbox" />
-              Өглөө (8pm-12pm) </label
+              Өглөө (6:00-12:00) </label
             ><br />
             <label class="Time">
               <input type="checkbox" />
-              Өдөр (12pm-5pm) </label
+              Өдөр (12:00-18:00) </label
             ><br />
 
             <label class="Time">
               <input type="checkbox" />
-              Орой (5pm-9:30pm) </label
+              Орой (18:00-22:00) </label
             ><br />
           </form>
           <hr />
@@ -132,15 +76,7 @@
         <a href="instagram.com">Instagram</a>
       </div>
     </footer>
-    <script>
-      // Toggle the navigation menu
-      document
-        .querySelector(".hamburger")
-        .addEventListener("click", function () {
-          const nav = document.querySelector(".navStyle");
-          nav.classList.toggle("nav-active");
-        });
-    </script>
-    <script src="/employee.js"></script>
+    <script src="../components/header.js"></script>
+    <script type="module" src="../components/app.js"></script>
   </body>
 </html>

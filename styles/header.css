@@ -1,0 +1,105 @@
+/* Base styles (light mode) */
+:root {
+    --backgroundcolor: #fff; /* Light background */
+    --fontcolor: #333; /* Dark text color */
+    --headerHeight: 60px;
+    --headerPadding1: 20px;
+    --headerPadding2: 15px;
+    --marginspace: 20px;
+    --gap3: 20px;
+    --gap2: 15px;
+    --fontfamily: 'Arial', sans-serif;
+}
+/* General styles for navigation and header */
+.navStyle {
+  margin-left: var(--marginspace);
+  gap: var(--gap3);
+  display: flex;
+  align-items: center;
+}
+
+.navCont {
+  width: 100%;
+  display: flex;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.loginSign {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  gap: var(--gap2);
+}
+
+.hamburger {
+  display: none; /* Hidden by default */
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: var(--fontcolor);
+  cursor: pointer;
+}
+
+a {
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--fontcolor);
+  font-family: var(--fontfamily);
+}
+
+header {
+  background-color: var(--backgroundcolor);
+  display: flex;
+  height: var(--headerHeight);
+  padding: var(--headerPadding1);
+}
+
+.loginButton {
+  display: flex;
+  align-items: center;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  .mainCont {
+    height: auto;
+  }
+
+  header {
+    padding: var(--headerPadding2);
+  }
+
+  .navStyle {
+    position: fixed;
+    top: var(--headerHeight);
+    right: -250px; /* Start off-screen */
+    height: 100%;
+    width: 250px; /* Set width for the menu */
+    opacity: 0; /* Hidden by default */
+    flex-direction: column;
+    z-index: 1;
+    background-color: var(--backgroundcolor);
+    transition: right 0.5s ease, opacity 0.5s ease; /* Animate position and opacity */
+    padding: 1rem 0;
+  }
+
+  .navStyle a {
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  /* Show navigation when active */
+  .nav-active {
+    right: 0; /* Bring the menu into view */
+    opacity: 1; /* Show the menu */
+  }
+
+  .hamburger {
+    display: block; /* Show hamburger button on mobile */
+  }
+}

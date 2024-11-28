@@ -2,57 +2,47 @@
   box-sizing: border-box;
 }
 
+/* Dark mode styles */
+.dark-mode {
+  --backgroundcolor: #111a35; /* Dark background */
+  --fontcolor: #eee5ca; /* Light text color */
+}
+
 body {
   margin: var(--marginNone);
 }
 :root {
   --displayFlex: flex;
   --contentspace: space-between;
-  --Datewidth: 30%;
   --backgroundcolor: #eee5ca;
-  --margin5: 5%;
-  --columnflex: column;
-  --textcenter: center;
-  --buttonheight: 30%;
-  --margin2: 2%;
-  --margin20: 20%;
-  --margin10: 10%;
-  --margin15: 15%;
-  --margin30: 30%;
-  --margin25: 25%;
-  --margin40: 40%;
-  --margin60: 60%;
-  --contentcenter: center;
-  --headerPadding1: 0px 10% 0px 10%;
-  --headerPadding2: 0px 4% 0px 4%;
-  --headerHeight: 5rem;
   --fontfamily: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --text-indent: 10px;
-  --marginNone: 0px;
-  --window-height: 100vh;
-  --padding-top: 20px;
-  --headerPadding1: 0px 10% 0px 10%;
-  --headerPadding2: 0px 4% 0px 4%;
-  --padding1: 0px 20px 20px 20px;
-  --gap1: 2rem;
-  --gap2: 15px;
-  --gap3: 20px;
-  --input-height: 3rem;
   --headerHeight: 5rem;
-  --top-padding: 1rem;
-  --border-rad: 50px;
-  --border-rad1: 15px;
-  --inputspace: 6px;
-  --marginspace: 30px;
-  --backgroundcolor: #eee5ca;
-  --buttoncolor: #d0796b;
   --fontcolor: #3a4852;
   --fontsize1: 35px;
   --fontsize2: 25px;
   --fontsize3: 15px;
-  --imgheight: 240px;
-  --mobilewidth: 120px;
-  --mobilewidth1: 300px;
+  --gap1: 2rem;
+  --gap2: 15px;
+  --gap3: 20px;
+  --marginNone: 0px;
+  --margin5: 5%;
+  --margin2: 2%;
+  --margin10: 10%;
+  --margin15: 15%;
+  --margin20: 20%;
+  --margin25: 25%;
+  --margin30: 30%;
+  --margin40: 40%;
+  --margin60: 60%;
+  --headerPadding1: 0px 10% 0px 10%;
+  --headerPadding2: 0px 4% 0px 4%;
+  --buttoncolor: #d0796b;
+  --border-rad: 50px;
+  --border-rad1: 15px;
+  --input-height: 3rem;
+  --top-padding: 1rem;
+  --inputspace: 6px;
+  --marginspace: 30px;
 }
 
 img {
@@ -66,42 +56,53 @@ img {
   margin-bottom: var(--margin2);
 }
 
+.date {
+  margin-bottom: 0px;
+  font-family: var(--fontfamily);
+  font-size: var(--fontsize3);
+  color: var(--fontcolor);
+}
+
 .dateSearch {
+  border-radius: var(--border-rad);
+  overflow: hidden;
   height: 825px;
-  width: var(--Datewidth);
+  width: 30%;
   background-color: var(--backgroundcolor);
 }
 
 h1 {
+  margin: 10% 0px 3% 0px;
+  text-align: center;
+  width: 100%;
   font-size: var(--fontsize1);
   font-family: var(--fontfamily);
   color: var(--fontcolor);
-  margin-bottom: var(--marginBot);
 }
 
 main {
   width: 100%;
   padding: var(--headerPadding1);
+  padding-top: var(--margin5);
 }
+
 .Day {
   display: var(--displayFlex);
-  flex-direction: var(--columnflex);
+  flex-direction: column;
 }
 
 section div div button {
-  text-align: var(--textcenter);
-  height: var(--buttonheight);
+  text-align: center;
+  height: 30%;
   margin-top: var(--margin5);
   margin-left: var(--margin20);
   margin-right: var(--margin20);
   margin-bottom: var(--margin5);
 }
-section div div p {
-  margin-left: var(--margin20);
-}
+
 .Times {
   display: var(--displayFlex);
-  flex-direction: var(--columnflex);
+  flex-direction: column;
   margin-left: var(--margin20);
 }
 
@@ -111,7 +112,7 @@ section div div p {
 
 .Prices {
   display: var(--displayFlex);
-  flex-direction: var(--columnflex);
+  flex-direction: column;
   margin-top: var(--margin10);
   margin-left: var(--margin20);
   margin-right: var(--margin20);
@@ -131,36 +132,40 @@ section div button {
   margin-top: var(--margin10);
   margin-left: var(--margin20);
   margin-right: var(--margin20);
-  text-align: var(--textcenter);
-  width: var(--margin60);
+  text-align: center;
+  width: 60%;
   margin-bottom: var(--margin10);
 }
 
 .listOfWorkers {
-  width: var(--margin60);
+  width: 60%;
 }
+
 .services {
   background-color: var(--backgroundcolor);
   margin-bottom: var(--margin2);
   display: var(--displayFlex);
   height: 250px;
 }
+
 .picture {
   display: var(--displayFlex);
   width: var(--margin40);
 }
 
 .profile {
+  align-items: center;
   display: var(--displayFlex);
-  flex-direction: var(--columnflex);
-  justify-content: var(--contentcenter);
-  width: var(--margin30);
+  flex-direction: column;
+  justify-content: center;
+  width: 30%;
   margin-right: var(--margin10);
 }
+
 .PriceToTime {
   display: var(--displayFlex);
-  width: var(--margin30);
-  flex-direction: var(--columnflex);
+  width: 30%;
+  flex-direction: column;
   margin-right: var(--margin10);
   height: var(--margin10);
   margin-top: var(--margin2);
@@ -171,13 +176,7 @@ section div article div a button {
   margin-left: var(--margin25);
   margin-top: var(--margin10);
 }
-header {
-  background-color: var(--backgroundcolor);
-  display: flex;
-  height: var(--headerHeight);
-  padding: var(--headerPadding1);
-  width: 100%;
-}
+
 footer {
   position: relative;
   bottom: 0px;
@@ -187,76 +186,4 @@ footer {
   width: 100%;
   background-color: var(--backgroundcolor);
   height: 100px;
-}
-.loginSign {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: auto;
-  gap: var(--gap2);
-}
-.loginButton {
-  display: flex;
-  align-items: center;
-}
-.navCont {
-  width: 100%;
-  display: flex;
-}
-.navStyle {
-  margin-left: var(--marginspace);
-  gap: var(--gap3);
-  display: flex;
-  align-items: center;
-}
-.logo {
-  display: flex;
-  align-items: center;
-}
-a {
-  font-weight: 600;
-  text-decoration: none;
-  color: var(--fontcolor);
-  font-family: var(--fontfamily);
-}
-.hamburger {
-  display: none; /* Hidden by default */
-  font-size: 2rem;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-}
-
-@media (max-width: 768px) {
-  header {
-    padding: var(--headerPadding2);
-  }
-  .navStyle {
-    position: fixed;
-    top: var(--headerHeight);
-    right: -250px; 
-    height: 100%;
-    width: 250px;
-    opacity: 0; 
-    flex-direction: column;
-    z-index: 1;
-    background-color: var(--backgroundcolor);
-    transition: right 0.5s ease, opacity 0.5s ease; 
-    padding: 1rem 0;
-  }
-  .navStyle a {
-    padding: 10px 0;
-    text-align: center;
-  }
-
- 
-  .nav-active {
-    right: 0; 
-    opacity: 1;
-  }
-
-  .hamburger {
-    display: block;
-  }
 }

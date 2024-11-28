@@ -2,6 +2,7 @@
 const urlParams = new URLSearchParams(window.location.search);
 let jobTitle = urlParams.get("value");
 
+console.log(window.location.href);
 if (jobTitle == null) {
     jobTitle = "Засвар";
 }
@@ -10,9 +11,8 @@ const idPicker = id => document.getElementById(id);
 
 idPicker("jobTitle").innerHTML = jobTitle;
 
-const priceRange = idPicker("price");
-const currentPrice = idPicker("currentPrice");
-
+var priceRange = idPicker("price");
+var currentPrice = idPicker("currentPrice");
 
 currentPrice.textContent = priceRange.value;
 
@@ -25,7 +25,7 @@ priceRange.addEventListener("input", (event) => {
 });
 
 const DataFetch = async () => {
-    const url = "https://api.jsonbin.io/v3/b/671f6fb1e41b4d34e44a1ff4";
+    const url = "https://api.jsonbin.io/v3/b/671f6fb1e41b4d34e44a1ff4/";
     const masterKey = "$2a$10$7AM1j/hBZhPvc/smCjpiBuEtdtf85XHlFHw3JdaHGwnQwT7XD9gP.";
 
     try {
@@ -42,8 +42,10 @@ const DataFetch = async () => {
         }
 
         const data = await response.json();
+        console.log(data, "kaka");
         fetchedData = data.record.jobTypes[jobTitle] || [];
         filterAndRenderData();
+        return fetchedData;
 
     } catch (error) {
         console.error("Error fetching data:", error);
@@ -63,6 +65,7 @@ const filterAndRenderData = () => {
 
     if (filteredData.length === 0) {
         console.log("No items match the selected price.");
+        Render(filteredData)
     } else {
         console.log("Filtered data:", filteredData);
         Render(filteredData); 
@@ -80,7 +83,7 @@ const Render = (filteredData) => {
     resultContainer.innerHTML = "";
 
     if (filteredData.length === 0) {
-        resultContainer.innerHTML = "<p>No job listings found within this price range.</p>";
+        resultContainer.innerHTML = `<p>${priceRange.value} хооронд ажилын санал алга байна.</p>`;
         return;
     }
 
@@ -101,7 +104,7 @@ const Render = (filteredData) => {
                 </a>
             </div>
         </article>
-    `).join('');
+    `).reduce((prevValue, currentValue) => prevValue + currentValue);
 
 
     resultContainer.innerHTML = renderedItems;
