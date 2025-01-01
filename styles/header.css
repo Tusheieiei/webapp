@@ -1,16 +1,16 @@
-/* Base styles (light mode) */
 :root {
-    --backgroundcolor: #fff; /* Light background */
-    --fontcolor: #333; /* Dark text color */
-    --headerHeight: 60px;
-    --headerPadding1: 20px;
-    --headerPadding2: 15px;
-    --marginspace: 20px;
-    --gap3: 20px;
-    --gap2: 15px;
-    --fontfamily: 'Arial', sans-serif;
+  --backgroundcolor: #fff;
+  --fontcolor: #333;
+  --fontsize: 16px;
+  --fontweight: 600;
+  --headerHeight: 60px;
+  --headerPadding1: 20px;
+  --headerPadding2: 15px;
+  --marginspace: 20px;
+  --gap3: 20px;
+  --gap2: 15px;
+  --fontfamily: "Arial", sans-serif;
 }
-/* General styles for navigation and header */
 .navStyle {
   margin-left: var(--marginspace);
   gap: var(--gap3);
@@ -37,7 +37,7 @@
 }
 
 .hamburger {
-  display: none; /* Hidden by default */
+  display: none;
   font-size: 2rem;
   background: none;
   border: none;
@@ -46,7 +46,7 @@
 }
 
 a {
-  font-weight: 600;
+  font-weight: var(--fontweight);
   text-decoration: none;
   color: var(--fontcolor);
   font-family: var(--fontfamily);
@@ -63,8 +63,45 @@ header {
   display: flex;
   align-items: center;
 }
+.order {
+  background-color: transparent;
+  border: none;
+  font-family: var(--fontfamily);
+  color: var(--fontcolor);
+  font-weight: var(--fontweight);
+  font-size: var(--fontsize);
+}
 
-/* Media queries for responsive design */
+.dropDown {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  z-index: 1;
+  width: 200px;
+}
+.dropDown.show {
+  display: block;
+  background-color: white;
+}
+h3 {
+  font-size: var(--fontsize);
+  font-family: var(--fontfamily);
+  color: var(--fontcolor);
+  font-weight: var(--fontweight);
+}
+
+.order {
+  position: relative;
+}
+
+.orderStyle {
+  background-color: white;
+
+}
+
 @media (max-width: 768px) {
   .mainCont {
     height: auto;
@@ -77,14 +114,14 @@ header {
   .navStyle {
     position: fixed;
     top: var(--headerHeight);
-    right: -250px; /* Start off-screen */
+    right: -250px;
     height: 100%;
-    width: 250px; /* Set width for the menu */
-    opacity: 0; /* Hidden by default */
+    width: 250px;
+    opacity: 0;
     flex-direction: column;
     z-index: 1;
     background-color: var(--backgroundcolor);
-    transition: right 0.5s ease, opacity 0.5s ease; /* Animate position and opacity */
+    transition: right 0.5s ease, opacity 0.5s ease;
     padding: 1rem 0;
   }
 
@@ -93,13 +130,12 @@ header {
     text-align: center;
   }
 
-  /* Show navigation when active */
   .nav-active {
-    right: 0; /* Bring the menu into view */
-    opacity: 1; /* Show the menu */
+    right: 0;
+    opacity: 1;
   }
 
   .hamburger {
-    display: block; /* Show hamburger button on mobile */
+    display: block;
   }
 }

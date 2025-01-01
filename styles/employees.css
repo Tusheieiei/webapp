@@ -4,12 +4,15 @@
 
 /* Dark mode styles */
 .dark-mode {
-  --backgroundcolor: #111a35; /* Dark background */
+  --backgroundcolor: #000; /* Dark background */
   --fontcolor: #eee5ca; /* Light text color */
 }
 
 body {
   margin: var(--marginNone);
+}
+body.dark-mode {
+  background-color: #333333; /* Background color for dark mode */
 }
 :root {
   --displayFlex: flex;
@@ -21,9 +24,12 @@ body {
   --fontsize1: 35px;
   --fontsize2: 25px;
   --fontsize3: 15px;
+  --fontweight: 500;
   --gap1: 2rem;
   --gap2: 15px;
   --gap3: 20px;
+  --height1: 825px;
+  --height2: 250px;
   --marginNone: 0px;
   --margin5: 5%;
   --margin2: 2%;
@@ -39,6 +45,7 @@ body {
   --buttoncolor: #d0796b;
   --border-rad: 50px;
   --border-rad1: 15px;
+  --border-rad2: 8px;
   --input-height: 3rem;
   --top-padding: 1rem;
   --inputspace: 6px;
@@ -57,18 +64,26 @@ img {
 }
 
 .date {
+  font-weight: 500;
   margin-bottom: 0px;
   font-family: var(--fontfamily);
   font-size: var(--fontsize3);
+  margin-left: var(--margin20);
   color: var(--fontcolor);
 }
 
 .dateSearch {
   border-radius: var(--border-rad);
   overflow: hidden;
-  height: 825px;
   width: 30%;
   background-color: var(--backgroundcolor);
+}
+
+.dateFilter {
+  font-size: 2vh;
+  font-weight: var(--fontweight);
+  font-family: var(--fontfamily);
+  color: var(--fontcolor);
 }
 
 h1 {
@@ -78,6 +93,13 @@ h1 {
   font-size: var(--fontsize1);
   font-family: var(--fontfamily);
   color: var(--fontcolor);
+}
+
+span {
+  font-size: var(--fontsize3);
+  font-family: var(--fontfamily);
+  color: var(--fontcolor);
+  font-weight: var(--fontweight);
 }
 
 main {
@@ -90,7 +112,12 @@ main {
   display: var(--displayFlex);
   flex-direction: column;
 }
-
+button {
+  background-color: transparent;
+  border-radius: var(--border-rad2);
+  border-width: 1px;
+  padding: 2%;
+}
 section div div button {
   text-align: center;
   height: 30%;
@@ -100,14 +127,25 @@ section div div button {
   margin-bottom: var(--margin5);
 }
 
-.Times {
+.times {
   display: var(--displayFlex);
   flex-direction: column;
-  margin-left: var(--margin20);
 }
 
-.Time {
+.time {
   margin-top: var(--margin5);
+  font-size: 2vh;
+  font-family: var(--fontfamily);
+  font-weight: var(--fontweight);
+  color: var(--fontcolor);
+  margin-left: var(--margin20);
+}
+.timefilter {
+  margin-left: var(--margin20);
+  font-size: var(--fontsize3);
+  font-family: var(--fontfamily);
+  color: var(--fontcolor);
+  font-weight: var(--fontweight);
 }
 
 .Prices {
@@ -120,9 +158,19 @@ section div div button {
 }
 
 .price {
+  font-size: var(--fontsize3);
+  font-family: var(--fontfamily);
+  color: var(--fontcolor);
+  font-weight: var(--fontweight);
   margin-bottom: var(--margin5);
 }
-
+#listOfWorkers p {
+  font-size: var(--fontsize3);
+  font-family: var(--fontfamily);
+  color: var(--fontcolor);
+  font-weight: var(--fontweight);
+  text-align: center;
+}
 #priceValue {
   display: var(--displayFlex);
   justify-content: var(--contentspace);
@@ -136,8 +184,13 @@ section div button {
   width: 60%;
   margin-bottom: var(--margin10);
 }
+a > button {
+  border-radius: var(--border-rad2);
+}
 
 .listOfWorkers {
+  height: var(--height1);
+  overflow: scroll;
   width: 60%;
 }
 
@@ -145,7 +198,9 @@ section div button {
   background-color: var(--backgroundcolor);
   margin-bottom: var(--margin2);
   display: var(--displayFlex);
-  height: 250px;
+  height: var(--height2);
+  border-radius: var(--border-rad2);
+  overflow: hidden;
 }
 
 .picture {

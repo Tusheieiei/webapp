@@ -13,9 +13,14 @@
     <script type="module" src="../lib/app.js"></script>
   </head>
   <body>
+    <script src="../components/header.js"></script>
+    <script src="../components/orders.js"></script>
+    <script src="../components/jobs.js"></script>
+
     <header-component></header-component>
     <main>
       <section class="container">
+        <!-- Filter хийх хэсэг -->
         <div class="dateSearch">
           <h1 id="jobTitle">Ажилийн нэр</h1>
           <div class="Day">
@@ -26,25 +31,25 @@
             <button class="dateFilter">Огноо сонгох</button>
           </div>
           <hr />
-          <form class="Times">
-            <p>Цаг</p>
-            <label class="Time">
+          <p class="timefilter">Цаг</p>
+          <form class="times">
+            <label class="time">
               <input type="checkbox" />
               Өглөө (6:00-12:00) </label
             ><br />
-            <label class="Time">
+            <label class="time">
               <input type="checkbox" />
               Өдөр (12:00-18:00) </label
             ><br />
 
-            <label class="Time">
+            <label class="time">
               <input type="checkbox" />
               Орой (18:00-22:00) </label
             ><br />
           </form>
           <hr />
           <form class="Prices">
-            <label class="price">Үнэ</label>
+            <label class="price">Үнэ ₮</label>
             <input
               type="range"
               id="price"
@@ -55,14 +60,13 @@
               step="1000"
             />
             <div id="priceValue">
-              <span id="currentPrice">20000</span>
+              <span id="currentPrice" class="price">20000₮</span> <!-- Initial value set here -->
             </div>
           </form>
-          <hr />
-          <button>Харах</button>
+          
         </div>
         <div class="listOfWorkers" id="listOfWorkers">
-          <!-- list хийгдэх card ууд -->
+        <p >Та хайлт хийнэ үү?</p>
         </div>
       </section>
     </main>
@@ -81,8 +85,5 @@
         <a href="instagram.com">Instagram</a>
       </div>
     </footer>
-    <script src="../components/header.js"></script>
-
-    <script src="../components/card.js"></script>
   </body>
 </html>
