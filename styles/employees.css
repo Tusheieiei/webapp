@@ -17,12 +17,13 @@ body.dark-mode {
 :root {
   --displayFlex: flex;
   --contentspace: space-between;
-  --backgroundcolor: #eee5ca;
+  --backgroundcolor: #6c63ff;
   --fontfamily: "Helvetica Neue", Helvetica, Arial, sans-serif;
   --headerHeight: 5rem;
-  --fontcolor: #3a4852;
+  --fontcolor: #fff;
   --fontsize1: 35px;
   --fontsize2: 25px;
+  --fontsize4: 20px;
   --fontsize3: 15px;
   --fontweight: 500;
   --gap1: 2rem;
@@ -31,6 +32,7 @@ body.dark-mode {
   --height1: 825px;
   --height2: 250px;
   --marginNone: 0px;
+  --margin1: 2vh;
   --margin5: 5%;
   --margin2: 2%;
   --margin10: 10%;
@@ -53,8 +55,9 @@ body.dark-mode {
 }
 
 img {
-  width: 200px;
+  width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 .container {
@@ -120,13 +123,25 @@ button {
 }
 section div div button {
   text-align: center;
-  height: 30%;
-  margin-top: var(--margin5);
   margin-left: var(--margin20);
   margin-right: var(--margin20);
   margin-bottom: var(--margin5);
 }
-
+h3 {
+  font-family: var(--fontfamily);
+  color: var(--fontcolor);
+  font-size: var(--fontsize4);
+  font-weight: var(--fontweight2);
+}
+.orderbuttons {
+  display: var(--displayFlex);
+}
+.orderbutton {
+  font-family: var(--fontfamily);
+  color: var(--fontcolor);
+  font-size: var(--fontsize3);
+  font-weight: var(--fontweight);
+}
 .times {
   display: var(--displayFlex);
   flex-direction: column;
@@ -164,31 +179,35 @@ section div div button {
   font-weight: var(--fontweight);
   margin-bottom: var(--margin5);
 }
-#listOfWorkers p {
+.listOfWorkers p {
   font-size: var(--fontsize3);
   font-family: var(--fontfamily);
-  color: var(--fontcolor);
+  color: var(--backgroundcolor);
   font-weight: var(--fontweight);
-  text-align: center;
+}
+.PriceToTime p {
+  font-size: var(--fontsize3);
+  font-family: var(--fontfamily);
+  color: #fff;
+  font-weight: var(--fontweight);
+}
+.profile p {
+  font-size: var(--fontsize3);
+  font-family: var(--fontfamily);
+  color: #fff;
+  font-weight: var(--fontweight);
 }
 #priceValue {
   display: var(--displayFlex);
   justify-content: var(--contentspace);
 }
 
-section div button {
-  margin-top: var(--margin10);
-  margin-left: var(--margin20);
-  margin-right: var(--margin20);
-  text-align: center;
-  width: 60%;
-  margin-bottom: var(--margin10);
-}
 a > button {
   border-radius: var(--border-rad2);
 }
 
 .listOfWorkers {
+  border-radius: var(--border-rad2);
   height: var(--height1);
   overflow: scroll;
   width: 60%;
@@ -209,25 +228,24 @@ a > button {
 }
 
 .profile {
-  align-items: center;
   display: var(--displayFlex);
   flex-direction: column;
   justify-content: center;
   width: 30%;
   margin-right: var(--margin10);
+  margin-left: var(--margin1);
 }
 
 .PriceToTime {
   display: var(--displayFlex);
+  height: 100%;
+  justify-content: space-evenly;
   width: 30%;
   flex-direction: column;
-  margin-right: var(--margin10);
-  height: var(--margin10);
   margin-top: var(--margin2);
 }
 
 section div article div a button {
-  width: var(--margin30);
   margin-left: var(--margin25);
   margin-top: var(--margin10);
 }
@@ -237,8 +255,36 @@ footer {
   bottom: 0px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   width: 100%;
   background-color: var(--backgroundcolor);
   height: 100px;
 }
+footer p {
+  font-family: var(--fontfamily);
+  color: var(--fontcolor);
+  font-weight: var(--fontweight);
+}
+footer nav {
+  display: flex;
+  gap: var(--gap2);
+
+}
+footer nav a {
+  text-decoration: none;
+  color: var(--fontcolor);
+  font-family: var(--fontfamily);
+  font-weight: var(--fontweight);
+}
+.social-media { 
+  display: flex;
+  gap: var(--gap2);
+}
+.social-media a {
+  text-decoration: none;
+  color: var(--fontcolor);
+  font-family: var(--fontfamily);
+  font-weight: var(--fontweight);
+}
+
+

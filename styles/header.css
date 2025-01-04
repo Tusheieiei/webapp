@@ -89,7 +89,7 @@ header {
 h3 {
   font-size: var(--fontsize);
   font-family: var(--fontfamily);
-  color: var(--fontcolor);
+  color: #6c63ff;
   font-weight: var(--fontweight);
 }
 
@@ -99,9 +99,13 @@ h3 {
 
 .orderStyle {
   background-color: white;
-
 }
 
+.theme-toggle {
+  border-radius: 8px; 
+  border: 1px solid black;
+  background-color: transparent;
+}
 @media (max-width: 768px) {
   .mainCont {
     height: auto;

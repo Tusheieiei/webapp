@@ -6,7 +6,7 @@ class Jobs extends HTMLElement {
 
     connectedCallback() {
         this.firstname = this.getAttribute("firstname") || "Нэр";
-        this.lastName = this.getAttribute("lastname") || "Овог"; // Use lowercase attribute names
+        this.lastName = this.getAttribute("lastname") || "Овог";
         this.rating = this.getAttribute("itemrating") || "★★★☆☆";
         this.jobDescription = this.getAttribute("jobdescription") || "Үйлчилгээний товч танилцуулга...";
         this.pricePerHour = this.getAttribute("priceperhour") || "Тодорхойгүй";
@@ -48,9 +48,10 @@ class Jobs extends HTMLElement {
             </div>
             <div class="PriceToTime">
                 <p>Үнэ: 1цаг / ${this.pricePerHour}₮</p>
-                <a>
+                <div class="orderbuttons">
+                    <a href="workerProfile.html" class="orderbutton">Цааш үзэх</a>
                     <button class="orderbutton">Сонгох</button>
-                </a>
+                </div>
             </div>
         </article>
         `;

@@ -16,6 +16,7 @@ class Orders extends HTMLElement {
             alert(`Та энэхүү ${service} үйлчилгээг аль хэдийн сонгосон байна.`)
         } else {
             this.order.set(service, 1);
+            alert(`Та ${service} үйлчилгээг амжилттай сонголоо.`)
         }
         this.saveOrders(); 
         this.render();
