@@ -21,9 +21,9 @@
   --border-rad1: 15px;
   --inputspace: 6px;
   --marginspace: 30px;
-  --backgroundcolor: #eee5ca;
-  --buttoncolor: #d0796b;
-  --fontcolor: #3a4852;
+  --backgroundcolor: #6c63ff;
+  --buttoncolor: #f1c40f;
+  --fontcolor: #fff;
   --fontsize1: 35px;
   --fontsize2: 25px;
   --fontsize3: 15px;
@@ -182,10 +182,36 @@ footer {
   bottom: 0px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   width: 100%;
   background-color: var(--backgroundcolor);
   height: 100px;
+}
+footer p {
+  font-family: var(--fontfamily);
+  color: var(--fontcolor);
+  font-weight: var(--fontweight);
+}
+footer nav {
+  display: flex;
+  gap: var(--gap2);
+
+}
+footer nav a {
+  text-decoration: none;
+  color: var(--fontcolor);
+  font-family: var(--fontfamily);
+  font-weight: var(--fontweight);
+}
+.social-media { 
+  display: flex;
+  gap: var(--gap2);
+}
+.social-media a {
+  text-decoration: none;
+  color: var(--fontcolor);
+  font-family: var(--fontfamily);
+  font-weight: var(--fontweight);
 }
 @media (max-width: 768px) {
   header {
