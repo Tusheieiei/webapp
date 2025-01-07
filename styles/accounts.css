@@ -1,3 +1,10 @@
+* {
+  box-sizing: border-box;
+}
+body.dark-mode {
+  --backgroundcolor: #333;
+  --fontcolor: #f1f1f1;
+}
 :root {
     --primary-color: #6c63ff; /* Үндсэн өнгө */
     --secondary-color: #ffffff; 
@@ -234,35 +241,37 @@
   }
   
   footer {
-    text-align: center;
-    padding: var(--padding);
-    background: linear-gradient(90deg, var(--primary-color), #4b47c6);
-    color: var(--secondary-color);
+    position: relative;
+    bottom: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    background-color: var(--backgroundcolor);
+    height: 100px;
   }
-  
+  footer p {
+    font-family: var(--fontfamily);
+    color: var(--fontcolor);
+    font-weight: var(--fontweight);
+  }
   footer nav {
-    margin-top: var(--spacing);
+    display: flex;
+    gap: var(--gap2);
   }
-  
   footer nav a {
-    color: var(--secondary-color);
     text-decoration: none;
-    margin: 0 var(--spacing);
-    transition: color var(--transition);
+    color: var(--fontcolor);
+    font-family: var(--fontfamily);
+    font-weight: var(--fontweight);
   }
-  
-  footer nav a:hover {
-    color: #d1cfff;
+  .social-media {
+    display: flex;
+    gap: var(--gap2);
   }
-  
-  footer .social-media a {
-    margin: 0 var(--spacing);
-    color: var(--secondary-color);
+  .social-media a {
     text-decoration: none;
-    font-size: 1.2rem;
-    transition: transform var(--transition);
-  }
-  
-  footer .social-media a:hover {
-    transform: scale(1.1);
+    color: var(--fontcolor);
+    font-family: var(--fontfamily);
+    font-weight: var(--fontweight);
   }
